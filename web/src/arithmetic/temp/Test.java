@@ -12,6 +12,8 @@ public class Test {
 		char[] a = str.toCharArray();
 		System.out.println(a[0]);
 		
+		
+		
 		System.out.println(a[0] + (25 - (Character.toLowerCase(a[0]) - 'a') ));
 		
 		/*for (int i = 0; i < 26; i++) {
