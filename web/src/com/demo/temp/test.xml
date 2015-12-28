@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<School>
+    <Student>
+        <Name>沈浪</Name>
+        <Num>1006010022</Num>
+        <Classes>信管2</Classes>
+        <Address>浙江杭州3</Address>
+        <Tel>123456</Tel>
+    </Student>
+    <Student>
+        <Name>沈1</Name>
+        <Num>1006010033</Num>
+        <Classes>信管1</Classes>
+        <Address>浙江杭州4</Address>
+        <Tel>234567</Tel>
+    </Student>
+    <Student>
+        <Name>沈2</Name>
+        <Num>1006010044</Num>
+        <Classes>生工2</Classes>
+        <Address>浙江杭州1</Address>
+        <Tel>345678</Tel>
+    </Student>
+    <Student>
+        <Name>沈3</Name>
+        <Num>1006010055</Num>
+        <Classes>电子2</Classes>
+        <Address>浙江杭州2</Address>
+        <Tel>456789</Tel>
+    </Student>
+</School>

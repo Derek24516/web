@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JS俄罗斯方块</title>
+<style>
+#board tr td {
+	width: 20px;
+	height: 20px;
+}
+
+#main {
+	float: left;
+}
+
+#preBoard tr td {
+	width: 20px;
+	height: 20px;
+}
+</style>
+</head>
+<body>
+	<div id = "main"></div>
+</body>
+<script type="text/javascript">
+	
+	//游戏画布对象
+	var GameTable = function(columns,rows){
+		this.column = columns;	//列数
+		this.rows = rows ;		//行数
+		this.currentBlock = 
+		//绘制游戏方格
+		this.drawGame = function(){
+			var html ="<table id = 'board' cellspacing=0 cellpadding=0 border=1 style='border-collapse:collapse;' >"
+			for(var i = 0 ;i < columns; i++){
+				html += "<tr>"
+				for(var j = 0;j < rows; j++){
+					html += "<td></td>";
+				}
+				html += "<tr>";
+			}
+			html += "</table>"
+			
+			return html;
+		}
+	};
+	
+	/**
+	*	游戏方块对象
+	*  
+	* 
+	*/
+	
+	var block = function(x,y){
+		this.x = x;	//横坐标
+		this.y = y;	//纵坐标
+		this.color = color ; //颜色
+	}
+	
+	/**
+	*
+	*	方块的基本形状
+	*	1、有四种基本形状（横、品字形、土字形、与字形）(0-3)
+	*
+	*/
+	var GameElement = function (type,blockArray){
+		this.type = type ;	//类型:0-3
+		this.blockArray = [];	//方块对象数组
+		this.rotateNum = 0 ;	//可以旋转次数
+		switch(this.type){
+		}
+		//旋转的方法 ---向左还是向右旋转
+		this.rotate = function (direction){
+		}
+	}
+	
+	/**
+	*
+	*	游戏的一些工具类
+	*
+	*/
+	var GameUtils = {
+		/**
+		*
+		*	随机生成新的基本方块
+		*
+		*/
+		createNewBlock:function(){
+			var type = Math.random() * 4 ;
+			var blockArray = [];
+			switch(type){
+				case 0 :
+					//blockArray = 
+			}
+		}
+	}
+	
+	var Game = {
+		/*
+		*
+		*	游戏初始化	
+		*
+		*/
+		init:function(){
+			var currBlock = 
+			this.gameTable = new GameTable(18,10); //初始化游戏画布
+			
+		},
+		//游戏开始
+		start:function(){
+		},
+		//游戏暂停
+		stop:function(){
+		},
+		setDifficultyLevel:function(){
+		},
+		getInfo:function(){
+		}
+	}
+	
+	(function(){
+		var gameTable = new GameTable(18,10);
+		console.info(gameTable);
+		document.getElementById("main").innerHTML = gameTable.drawGame();
+	})();
+</script>
+</html>

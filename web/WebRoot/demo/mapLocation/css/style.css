@@ -1,0 +1,76 @@
+@charset "utf-8";
+/*--
+Styles Index
+=======
+1.0 Reset
+2.0 Common style
+3.0 Main structure
+--*/
+
+/* -- 1.0 Reset -- */
+body,ul,dl,dd,h1,h2,h3,h4,h5,h6,p,form,input,textarea,select{margin:0;padding:0;font:12px 'Microsoft YaHei',Arial,Helvetica,sans-serif;}
+ul,ol{padding-left:0;list-style-type:none;}
+img{border:0 none;}
+em,i{font-style:normal;}
+a:link{color:#4F14F7; text-decoration: none;}
+a:visited{color:#551a8b;}
+a:hover{color:#FF9900;text-decoration: underline;}
+a:active{color: #cc0000;}
+/* -- 2.0 Common style -- */
+.dn{display:none;}
+.db{display:block;}
+.fl{float:left;}
+.fr{float:right;}
+.rel{position: relative;}
+.abs{position: absolute;}
+.gap{height: 10px;width: 100%;}
+.auto{margin: 0 auto;}
+.clear { clear: both;}
+.clearfix:before, .clearfix:after { content: '\0020'; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1 } 
+
+/* -- 3.0 Main structure -- */
+.colRed{color: #f54336;}
+.sider{float: left; width: 340px; border-right: 1px solid #259ee3; position: relative;}
+.sider h1{background: #259ee3; height: 47px; line-height: 47px; color: white; font-size: 14px; padding-left: 15px;}
+.sider h2{line-height: 33px; color: #666; border-bottom: 1px solid #e3e8eb; padding-left: 15px;}
+.sider h2 span{color: #ff9c00;}
+.sider ul li{overflow: hidden; vertical-align: top; padding: 15px 20px;}
+.sider ul li p.info-tit{color: #3366cc; line-height: 22px;}
+.sider ul li p.info-tit i{float: left; background: url(../images/icon_gis.png) no-repeat; width: 20px; height: 26px; line-height: 20px; margin-right: 5px; color: white; text-align: center;}
+.sider ul li p.info-ctn{line-height: 2; padding-left: 25px;}
+.sider ul li p.info-ctn span{display: inline-block; color: #666; *display: inline; *zoom:1;}
+.sider ul li:hover,.sider ul li.selected{background: #f5f5f5;}
+.sider ul li:hover .info-tit i,.sider ul li.selected .info-tit i{background: url(../images/icon_gis_on.png) no-repeat;}
+.sider-hide{background: url(../images/sider_hide.png) no-repeat; width: 6px; height: 74px; position: absolute; right: -6px; top: 50%; margin-top: -37px;}
+.ico-home{background: url(../images/icon_home.png) no-repeat left center; padding-left: 18px;}
+.ico-user{background: url(../images/icon_user.png) no-repeat left center; padding-left: 18px;}
+.ico-phone{background: url(../images/icon_phone.png) no-repeat left center; padding-left: 18px;}
+.ico-bottle{background: url(../images/icon_bottle.png) no-repeat left center; padding-left: 18px;}
+
+.pop-box{border: 1px solid #aaccff; background: white; box-shadow: 4px 4px 10px #ccc;}
+.pop-box h1{height: 28px; line-height: 28px; margin: 1px; background: #259ee3; padding-left: 10px; overflow: hidden;}
+.pop-box h1 strong{float: left; color: white;}
+.pop-box h1 a{float: right; background: url(../images/icon_close.png) no-repeat center center; width: 28px; height: 28px;}
+.pop-box .botsj{background: url(../images/icon_arrow_bot.png) no-repeat; width: 17px; height: 9px; position: absolute; bottom: -9px; left: 45px; z-index: 2;}
+
+.pop-ctn{padding: 0 10px;}
+.pop-ctn p{margin-top: 10px; color: #666;}
+.pop-ctn .table-list{border-collapse: collapse; border: 1px solid #c1c1c1;}
+.pop-ctn .table-list tr td{border-right: 1px solid #c1c1c1; border-bottom: 1px solid #c1c1c1; height: 18px; color: #666; padding-left: 8px;}
+.pop-ctn .table-list tr td.tb-hd{text-align: center; padding-left: 0; background: #f3f3f3;}
+
+/*环境测点定*/
+.spac-1 ul li{overflow: hidden; vertical-align: top; padding: 5px 20px;}
+.sider ul li p.inline span{margin-right: 20px;}
+.pop-box h1.pop-tit{height: 28px; line-height: 28px; margin: 1px; background: white; padding-left: 10px; overflow: hidden;}
+.pop-box h1.pop-tit strong{float: left; color: #666;}
+.pop-box h1.pop-tit a{float: right; background: url(../images/icon_close_gray.png) no-repeat center center; width: 28px; height: 28px;}
+
+/*计划编制定位*/
+.sider ul li p.inline-1 span{margin-right: 15px;}
+
+/*任务下达定位*/
+.sider h3{color: #666; padding-left: 20px; line-height: 33px;}
+.pop-ctn .detail{ color: #3366cc; float: right; margin-top: 25px;}
