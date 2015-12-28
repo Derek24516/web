@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONObject;
 
 import com.mongodb.util.JSON;
-import com.ydd.util.StringUtils;
+import com.utils.StringUtils;
 
 /**
  * Servlet implementation class AjaxRequestServlet
@@ -46,8 +46,8 @@ public class AjaxRequestServlet extends HttpServlet {
 		String methodName = request.getParameter("methodName");
 		//	返回结果
 		JSONObject result = new JSONObject();
-		if(StringUtils.isEmty(className) || StringUtils.isEmty(methodName)){
-			result.put("reult", false);
+		if(StringUtils.isEmpty(className) || StringUtils.isEmpty(methodName)){
+			result.put("result", false);
 			result.put("msg", "根据类名和方法名查找不到对应的方法！");
 			response.getWriter().write(result.toString());
 			return;
@@ -62,7 +62,7 @@ public class AjaxRequestServlet extends HttpServlet {
 			//	调用该方法
 			method.invoke(obj, new Object[]{request,response});
 		} catch (Exception e) {
-			result.put("reult", false);
+			result.put("result", false);
 			result.put("msg", "根据类名[" + className +"]调用对应的方法[" + methodName + "]出错：" + e.getMessage());
 			response.getWriter().write(result.toString());
 			e.printStackTrace();

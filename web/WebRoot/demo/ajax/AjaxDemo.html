@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Ajax Demo </title>
+<script type="text/javascript" src="../../script/easyui/scripts/jquery-1.7.1.min.js"></script>  
+</head>
+<body>
+<script type="text/javascript">
+	/**
+	*	使用Ajax示例
+	*/
+	$(function(){
+		$.ajax({
+			url:'/web/ajax?className=com.demo.servlet.TestRequest&methodName=myRequest',
+			dataType:'json',
+			success:function(data,textStatus){
+				document.write(textStatus);
+				console.info(data);
+			}
+		});
+	});
+</script>
+</body>
+</html>

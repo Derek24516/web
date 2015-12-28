@@ -17,7 +17,7 @@
 	//	dom树加载完毕时
 	$(document).ready(function(){
 		$.ajax({
-			url:'',
+			url:'/ajax?className=&methodName=',
 			success:function(data, textStatus){
 				console.info(data + ',' + textStatus);
 			}

@@ -11,7 +11,6 @@ public class TestRequest implements BaseAjaxRequest{
 
 	@Override
 	public void request(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
 		
 	}
 	

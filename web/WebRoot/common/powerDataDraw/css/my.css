@@ -1,0 +1,265 @@
+/*禁止用户选中非表单内容*/
+* {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+
+    /* No support for these yet, use at own risk */
+    -o-user-select: none;
+    user-select: none;
+}
+
+/* 菜单 */
+.head a {
+	cursor: default;
+}
+
+/*左侧工具面板*/
+.left-box {
+    position: absolute;
+    top: 109px;
+    bottom: 0;
+}
+
+/*滚动条*/
+.right-box::-webkit-scrollbar-track
+{
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.right-box::-webkit-scrollbar
+{
+    width: 12px;
+    height: 12px;
+    background-color: #F5F5F5;
+}
+
+.right-box::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+    background-color: #CCCCCC;
+}
+
+.line-wrap:hover {
+    background-color: #ace5ff;
+}
+.line-wrap span{
+    /*border: 1px solid rgb(208, 208, 208);*/
+}
+
+.weight-warp, .dash-warp {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(219, 219, 218);
+    padding: 10px;
+    border-radius: 0;
+}
+
+.dash-warp span{
+    background-image: url(../images/line_style.png);
+}
+.dash-warp span.style1{
+    background-position-y: 0px;
+}
+.dash-warp span.style2{
+    background-position-y: -2px;
+}
+.dash-warp span.style3{
+    background-position-y: -4px;
+}
+.dash-warp span.style4{
+    background-position-y: -6px;
+}
+.dash-warp span.style5{
+    background-position-y: -8px;
+}
+.dash-warp span.style6{
+    background-position-y: -10px;
+}
+.dash-warp span.style7{
+    background-position-y: -12px;
+}
+
+.submenu, .x-submenu {
+    display: none;
+}
+
+.head .file-menu-wrap,
+.head .img-menu-wrap {
+    float: left;
+}
+
+.head .file-menu-wrap .submenu {
+    left: 5px;
+}
+
+.head a:hover{background: #3787ec; color: white; position: relative; }
+
+.head .img-menu-wrap:hover .submenu,
+.head .x-submenu-wrap:hover .x-submenu,
+.head .file-menu-wrap:hover .submenu {
+    display: block;
+}
+
+.x-submenu {
+    right: -170px;
+}
+
+.right-box {
+    left: 163px;
+    right: 0;
+    bottom: 0;
+    top: 109px;
+    position: absolute;
+    overflow: scroll;
+    margin-left: 0;
+    min-height: 100px !important;
+    background-color: rgb(236, 237, 239);
+}
+
+.wrap {
+    min-width: 1175px;
+    min-height: 300px;
+}
+
+.hide_cursor {
+    cursor: none !important;
+}
+
+/*笔刷颜色选择器颜色*/
+.tools-align .icon-3 .color {
+    position: relative;
+    top: 6px;
+    left: 28px;
+    height: 3px;
+    width: 16px;
+    display: inline-block;
+    background-color: black;
+}
+/*文本框字体颜色选择器颜色*/
+.tools-fs a.icon-4 .color {
+    position: relative;
+    top: 7px;
+    left: 5px;
+    height: 3px;
+    width: 16px;
+    display: inline-block;
+    background-color: black;
+}
+/*文本框背景颜色选择器颜色*/
+.tools-fs a.icon-6 .color {
+    position: relative;
+    top: 8px;
+    left: 4px;
+    height: 4px;
+    width: 16px;
+    display: inline-block;
+}
+/*文本框边框颜色选择器颜色*/
+.tools-fs a.icon-7 .color {
+    position: relative;
+    top: 8px;
+    left: 4px;
+    height: 4px;
+    width: 17px;
+    display: inline-block;
+}
+
+canvas {
+    cursor: auto;
+    border: 1px solid rgb(229, 229, 229);
+    background-color: white;
+    margin: -1px 0 0 -1px;
+}
+
+
+
+/*选色板样式*/
+.sp-container {
+    background-color: #FFFEFE;
+    border: solid 1px #DBDADA;
+}
+
+.pixel-tip {
+    background-color: rgb(236, 237, 239);
+    border-radius: 5px;
+    padding: 3px 6px;
+    pointer-events: none;
+}
+
+
+/*画布右键菜单*/
+.canvas-menu {
+    cursor: default;
+    padding: 1px 5px;
+    min-width: 123px;
+    background-color: rgb(236, 237, 239);
+    border: 1px solid rgb(204, 202, 202);
+    z-index: 10;
+}
+.menu-item {
+    padding: 6px 1px 6px 25px;
+    /*border-bottom: 1px solid rgb(204, 202, 202);*/
+}
+
+.menu-item:hover {
+    background-color: rgb(251, 251, 251);
+}
+
+.menu-item.disabled {
+    color: rgb(181, 181, 181);
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+
+/*分隔线*/
+.split-line {
+    height: 1px;
+    width: 100%;
+    display: block;
+    background-color: rgb(191, 190, 190);
+}
+
+/*字体按钮样式补充*/
+.tools-fs a.icon-5-l{ background: url(../images/icon_f5-l.png) no-repeat center center;}
+.tools-fs a.icon-5-c{ background: url(../images/icon_f5-c.png) no-repeat center center;}
+.tools-fs a.icon-5-r{ background: url(../images/icon_f5-r.png) no-repeat center center;}
+.tools-fs a.icon-6{
+    background: url(../images/icon_f6.png) no-repeat 4px center;
+    width: 33px;
+    position: relative;
+}
+.tools-fs a.icon-6 i{width: 10px; height: 25px; position: absolute; right: 0; top:0; background: url(../images/select_icon.png) no-repeat center center;}
+.tools-fs a.icon-7{
+    background: url(../images/icon_f7.png) no-repeat 4px center;
+    width: 33px;
+    position: relative;
+}
+.tools-fs a.icon-7 i{width: 10px; height: 25px; position: absolute; right: 0; top:0; background: url(../images/select_icon.png) no-repeat center center;}
+.tools-fs a:hover.icon-5-l,.tools-fs a.on.icon-5-l{ background:#d8dde6 url(../images/icon_f5-l.png) no-repeat center center;}
+.tools-fs a:hover.icon-5-c,.tools-fs a.on.icon-5-c{ background:#d8dde6 url(../images/icon_f5-c.png) no-repeat center center;}
+.tools-fs a:hover.icon-5-r,.tools-fs a.on.icon-5-r{ background:#d8dde6 url(../images/icon_f5-r.png) no-repeat center center;}
+.tools-fs a:hover.icon-6,.tools-fs a.on.icon-6{ background:#d8dde6 url(../images/icon_f6.png) no-repeat 4px center;}
+.tools-fs a:hover.icon-6 i,.tools-fs a.on.icon-4 i{background:#9cb0d3 url(../images/select_icon.png) no-repeat center center;}
+.tools-fs a:hover.icon-7,.tools-fs a.on.icon-7{ background:#d8dde6 url(../images/icon_f7.png) no-repeat 4px center;}
+.tools-fs a:hover.icon-7 i,.tools-fs a.on.icon-4 i{background:#9cb0d3 url(../images/select_icon.png) no-repeat center center;}
+
+/*左侧工具栏收缩按钮*/
+.icons-nav dt p a {
+    cursor: pointer;
+}
+
+/* tooltip */
+.tooltip {
+	position: fixed;
+	background-color: rgb(255, 255, 255);
+	padding: 5px;
+	margin: 0px -20px;
+	left: 25px;
+	top: 10px;
+	z-index: 1;
+	border: 1px solid rgb(174, 174, 174);
+	border-radius: 4px;
+}

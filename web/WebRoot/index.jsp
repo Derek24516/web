@@ -7,13 +7,11 @@
 
 </head>
 <body>
-	<canvas id="the_stage" width="600" height="400"
-		style="border:1px solid #999;" >您的浏览器不支持canvas!</canvas>
-	
+	首页
 </body>
 <script type="text/javascript" src="draw.js"></script>
 <script>
-		(function(){
+		/* (function(){
 			console.info("????");
 			
 			//DrawUtils.setLine("the_stage",'red',3);
@@ -21,7 +19,7 @@
 			//DrawUtils.setCanvas("the_stage", 100, 100);
 			DrawUtils.drawLine("the_stage");
 			console.info("success");
-		})();
+		})(); */
 		
 </script>
 </html>
