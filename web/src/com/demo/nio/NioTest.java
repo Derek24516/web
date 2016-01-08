@@ -1,18 +1,13 @@
 package com.demo.nio;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
-import java.nio.channels.Channel;
 import java.nio.channels.FileChannel;
 import java.util.Date;
 
 /**
- * 		 Nio 学习所学Test
- *  <br />
- *  	来源：http://ifeve.com/java-nio-all/
- *  <br />
+ * 		 Nio 学习Demo
  *  
  * @author Administrator
  *

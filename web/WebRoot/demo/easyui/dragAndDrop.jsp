@@ -201,13 +201,6 @@
 			accept:'#d1,#d3' 
 		});  
 		
-		//	渲染easyUI
-		//$.parser.parse();   
-		
-		//	渲染完毕时
-		/* $.parser.onComplete = function(){
-			
-		} */
 	});
 </script>
 </html>

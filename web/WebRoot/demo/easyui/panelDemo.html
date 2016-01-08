@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Drag Demo</title>
+<link rel="stylesheet" type="text/css" href="../../script/easyui/themes/default/easyui.css">   
+<link rel="stylesheet" type="text/css" href="../../script/easyui/themes/icon.css">   
+</head>
+<body>
+	<div id="p" class="easyui-panel" title="My Panel" closable = "true" style="width:500px;height:150px;padding:10px;background:#fafafa;"  
+		data-options="iconCls:'icon-save',closable:true,collapsible:true,minimizable:true,maximizable:true">   
+	    <p>panel content.</p>   
+	    <p>panel content.</p>   
+	</div> 
+	<div id = "p2"></div>
+	<script type="text/javascript" src="../../scripts/jquery-1.7.1.min.js"></script>   
+	<script type="text/javascript" src="../../script/easyui/scripts/jquery.easyui.min.js"></script> 
+	<script type="text/javascript">
+		$(function(){
+			$("#p2").panel({
+				width:500,
+				height:200,
+				title:'Jq添加的Panel',
+				//	设置之后将没有标题，默认false
+				//	noheader : true, 
+				collapsible : true,
+				minimizable : true,
+				maximizable : true,
+				closable : true,
+				//left:500px,
+				top: 10
+				
+			});
+		});
+	</script> 
+</body>
+</html>

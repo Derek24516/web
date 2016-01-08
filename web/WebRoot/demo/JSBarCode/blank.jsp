@@ -27,8 +27,10 @@
 		
 		var obj = {};
 		obj.render = "canvas";
-		obj.text = utf16to8("我爱死你了宝贝贝~~~~O(∩_∩)");
+		obj.text = utf16to8("2323223~~~~O(∩_∩)");
 		$('#qrcode').qrcode(obj);
+		
+		var arr = new Array();
 		
 		/* //	渲染easyUI
 		$.parser.parse();   

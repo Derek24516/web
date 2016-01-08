@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<title>Drag Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../script/easyui/themes/default/easyui.css">   
+	<link rel="stylesheet" type="text/css" href="../../script/easyui/themes/icon.css">   
+</head>
+
+    <style type="text/css">
+        .left{width: 120px;float: left;}
+        .left table{background: #E0ECFF;}
+        .left td{background: #eee;}
+        
+        .right{float: right;width: 570px;}
+        .right table{width: 100%;}
+        .right td{background: #E0ECFF;color: #444;text-align: center;padding: 2px;width: 100px;}
+        .right td.drop{background: #fafafa;width: 100px;}
+        .right td.over{background: #FBEC88;width: 100px;}
+        
+        .item{text-align: center;border: 1px solid #499B33;background: #fafafa;color: #444;width: 100px;}
+        .assigned{border: 1px solid #BC2A4D;}
+    </style>
+</head>
+<body>
+    <div style="width: 800px;">
+        <div class="left">
+            <table>
+                <tr>
+                    <td>
+                        <div class="item">英语</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item">科学</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item">音乐</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item">历史</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item">计算机</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item">数学</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item">艺术</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item">伦理学</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>星期一</td>
+                    <td>星期二</td>
+                    <td>星期三</td>
+                    <td>星期四</td>
+                    <td>星期五</td>
+                </tr>
+                <tr>
+                    <td>08:00</td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                </tr>
+                <tr>
+                    <td>10:00</td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                </tr>
+                <tr>
+                    <td>11:00</td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                </tr>
+                <tr>
+                    <td>13:00
+                    </td>
+                    <td colspan="5">午餐时间
+                    </td>
+                </tr>
+                <tr>
+                    <td>14:00</td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                </tr>
+                <tr>
+                    <td>15:00</td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                </tr>
+                <tr>
+                    <td>16:00</td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                    <td class="drop"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="../../script/easyui/scripts/jquery-1.7.1.min.js"></script>   
+	<script type="text/javascript" src="../../script/easyui/scripts/jquery.easyui.min.js"></script> 
+    <script type="text/javascript">
+        $(function () {
+            $('.left .item').draggable({
+                revert: true,
+                proxy: 'clone'
+            });
+            //可拽入容器
+            $('.right td.drop').droppable({
+                onDragEnter: function () {
+                    $(this).addClass('over');
+                },
+                onDragLeave: function () {
+                    $(this).removeClass('over');
+                },
+                onDrop: function (e, source) {
+                    $(this).removeClass('over');
+                    if ($(source).hasClass('assigned')) {
+                        //如果有红色的边框，表示是已经在课表中的课程
+                        $(this).empty().append(source);
+                    } else {
+                        //没有红色边框，是从左侧源中拖出的，要创建一个副本
+                        var c = $(source).clone().addClass('assigned');
+                        $(this).empty().append(c);
+                        //这个副本也是可以拖动的
+                        c.draggable({
+                            revert: true,
+                            onStopDrag: function (e) {
+                                //停止拖动的时候，如果在表格之外，则删除这个对象
+                                var d = e.data;
+                                var thisF = d.left;
+                                var thisT = d.top;
+                                var tableF = $(".right table").offset().left;
+                                var tableW = $(".right table").width();
+                                var tableT = $(".right table").offset().top;
+                                var tableH = $(".right table").height();
+
+                                if (thisF < tableF || thisF > tableF + tableW || thisT < tableT || thisT > tableT + tableH) {
+                                    $(this).remove();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        });  
+    </script>
+</body>
+</html>

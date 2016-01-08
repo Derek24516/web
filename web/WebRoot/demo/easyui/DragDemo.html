@@ -1,0 +1,26 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Drag Demo</title>
+<link rel="stylesheet" type="text/css" href="../../script/easyui/themes/default/easyui.css">   
+<link rel="stylesheet" type="text/css" href="../../script/easyui/themes/icon.css">   
+</head>
+<body>
+	<div id="dd" class="easyui-draggable" data-options="handle:'#title'" style="width:100px;height:100px;">    
+		<div id="title" style="background:#ccc;">
+			title
+		</div>
+	</div>
+	<script type="text/javascript" src="../../script/easyui/scripts/jquery-2.0.0.js"></script>   
+	<script type="text/javascript" src="../../script/easyui/scripts/jquery.easyui.min.js"></script> 
+	<script type="text/javascript">
+		$(function(){
+			$('#dd').draggable({ 
+				handle : '#title' ,
+				revert : true,
+				edge : 10
+			}); 
+		});
+	</script> 
+</body>
+</html>

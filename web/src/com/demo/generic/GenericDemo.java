@@ -1,6 +1,7 @@
 package com.demo.generic;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -12,7 +13,11 @@ import java.util.List;
 public class GenericDemo {
 
 	public static void main(String[] args) {
-		testList();
+		//testList();
+		
+		//testCollectionOperation();
+		
+		testCopy();
 		
 	}
 	
@@ -51,6 +56,52 @@ public class GenericDemo {
 		}*/
 	}
 	
+	/**
+	 * 集合运算Demo 交集、差集、合集、并集
+	 * 
+	 * @return 		void
+	 * @date		2016-1-29
+	 *
+	 */
+	public static void testCollectionOperation(){
+		List<String> list1 = new ArrayList<String>();
+		list1.add("A");
+		list1.add("B");
+		list1.add("D");
+		
+		List<String> list2 = new ArrayList<String>();
+		list2.add("A");
+		list2.add("C");
+		list2.add("E");
+
+		//list1.retainAll(list2);		//	交集：A
+		//list1.addAll(list2);			//	合集：A B D A C E
+		list1.removeAll(list2);			//	差集：B D
+		
+		System.out.println(list1);
+		System.out.println(list2);
+	}
+	
+	
+	public static void testCopy(){
+		List<Student> stus1 = new ArrayList<Student>();
+		Student s1 = new Student();
+		Course c1 = new Course();
+		c1.setCourseName("Math");
+		c1.setScores(100);
+		s1.getCourse().add(c1);
+		
+		stus1.add(s1);
+		
+		System.out.println(stus1);
+		
+		List<Student> stus2 = new ArrayList<Student>();
+		Collections.copy(stus2, stus1);
+		c1.setScores(90);
+		
+		System.out.println(stus1);
+		System.out.println(stus2);
+	}
 	public void testGenericMethod(){
 		
 	}

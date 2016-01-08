@@ -6,7 +6,32 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Test {
+	public static int total = 0;
 	public static void main(String[] args) throws IOException {
+		test(3 );
+		System.out.println(total);
+	}
+	
+	public static void test(int n){
+		if(n == 1){
+			System.out.print("1b ");
+			total ++ ;
+			System.out.print("\r\n");
+		}else if(n == 2){
+			//	跳2步
+			System.out.print("2b ");
+			total ++ ;
+			System.out.print("\r\n");
+			//	跳1步
+			test(n - 1);
+			System.out.print("1b ");
+		}else{
+			System.out.print("2b ");
+			test(n-2);
+			System.out.print("1b ");
+			test(n-1);
+		}
+		
 	}
 	
 	/**
@@ -41,4 +66,5 @@ public class Test {
 			System.out.print(",");
 		}*/
 	}
+	
 }
