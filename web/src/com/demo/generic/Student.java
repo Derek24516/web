@@ -1,21 +1,20 @@
-/**
- * 
- */
 package com.demo.generic;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Char的一些用法
  * 
  * @date		2016-1-
  * 
  */
 public class Student {
+	
+	private String id;
 	private String name ;
 	
 	List<Course> course = new ArrayList<Course>();
+	
 
 	public String getName() {
 		return name;
@@ -33,11 +32,31 @@ public class Student {
 		this.course = course;
 	}
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return "Name :" + this.name + ",course:" + course;
+		return "Name :" + this.name + ",course:" + course + ",id:" + id;
+	}
+	
+	@Override
+	public int hashCode() {
+		return id.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Student){
+			Student s = (Student) obj;
+			return s.getId().equals(id);
+		}else{
+			return false;
+		}
 	}
 }

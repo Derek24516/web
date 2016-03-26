@@ -2,6 +2,7 @@ package com.demo.generic;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -17,7 +18,10 @@ public class GenericDemo {
 		
 		//testCollectionOperation();
 		
-		testCopy();
+		//testCopy();
+		
+		//HashSet自定义去重Demo
+		//testHashSet();
 		
 	}
 	
@@ -102,11 +106,25 @@ public class GenericDemo {
 		System.out.println(stus1);
 		System.out.println(stus2);
 	}
-	public void testGenericMethod(){
-		
-	}
 
-	public static <T extends Runnable> void startThread(T t){
+	/**
+	 * HashSet Demo，用HashSet自定义去重的时候，要同时重写对象中的equals和hashCode方法
+	 * 
+	 * @return 		void
+	 * @date		2016-4-15
+	 *
+	 */
+	public static void testHashSet(){
+		Student s1 = new Student();
+		Student s2 = new Student();
 		
-	} 
+		s1.setId("s1");
+		s2.setId("s1");
+		
+		HashSet<Student> set = new HashSet<Student>();
+		set.add(s1);
+		set.add(s2);
+		
+		System.out.println(set);
+	}
 }

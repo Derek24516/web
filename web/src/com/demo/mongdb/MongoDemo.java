@@ -23,7 +23,7 @@ public class MongoDemo {
 		//testDel();
 		
 		//	更新
-		testUpdate();
+		//testUpdate();
 	}
 	
 	/**
