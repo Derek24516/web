@@ -5,6 +5,9 @@ public class Student implements Cloneable{
 	private String name;
 	private int id ;
 	
+	public void test(Student s){
+		this.age = s.age;
+	}
 	
 	public Student(int id) {
 		this.id = id;

@@ -3,6 +3,8 @@ package com.demo.generic;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.demo.annotation.Column;
+
 /**
  * 
  * @date		2016-1-
@@ -16,6 +18,7 @@ public class Student {
 	List<Course> course = new ArrayList<Course>();
 	
 
+	
 	public String getName() {
 		return name;
 	}

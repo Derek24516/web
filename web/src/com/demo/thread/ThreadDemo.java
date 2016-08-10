@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.demo.thread;
 
 /**
@@ -8,10 +5,12 @@ package com.demo.thread;
  *
  */
 public class ThreadDemo {
-	public static void main(String[] args){
+	public static void main(String[] args) throws InterruptedException{
 			//testDaemon();
 			
-			testJoinMethod();
+			//testJoinMethod();
+			
+			testString();
 	}
 	
 	/**
@@ -55,5 +54,27 @@ public class ThreadDemo {
 			}
 			System.out.println("---" + Thread.currentThread().getName());
 		}
+	}
+	
+	public static void testString() throws InterruptedException{
+		//	10个线程
+		int threadCount = 10 ;
+		StringBuilderThread.start = System.currentTimeMillis();
+		for(int i = 0 ; i < threadCount ; i ++ ){
+			Thread t = new Thread(new StringBuilderThread());
+			t.start();
+		}
+		
+		Thread.sleep(5000);
+		System.out.println(threadCount + "个线程操作StringBuilder，花费时间为：" + (StringBuilderThread.end - StringBuilderThread.start));
+		
+		StringBufferThread.start = System.currentTimeMillis();
+		for(int i = 0 ; i < threadCount ; i ++ ){
+			Thread t = new Thread(new StringBufferThread());
+			t.start();
+		}
+		
+		Thread.sleep(5000);
+		System.out.println(threadCount + "个线程操作StringBuffer，花费时间为：" + (StringBufferThread.end - StringBufferThread.start));
 	}
 }

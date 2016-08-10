@@ -46,7 +46,7 @@ public class GenericDemo {
 		}
 		
 		//	好，那我们换一种方式
-		//	以下代码却在编译时不通过(以为45可能会和46有区别，没想到都是编译不通过T_T)
+		//	以下代码却在编译时不通过(以为45行可能会和46有区别，没想到都是编译不通过T_T)
 		/*List<String> list = new ArrayList();
 		Integer in = new Integer(44);
 		list.add("2323");

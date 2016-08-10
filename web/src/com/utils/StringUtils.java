@@ -32,6 +32,7 @@ public class StringUtils {
 	 */
 	public static void main(String[] args) {
 		String str = "1,2[2,3[,4,5,2[2,4";
+		
 		String s = removePartOfString(str, "2[2", COMMA, false);
 		System.out.println(s);
 	}

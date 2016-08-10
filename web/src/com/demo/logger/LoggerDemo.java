@@ -1,7 +1,6 @@
 package com.demo.logger;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.Priority;
 import org.apache.log4j.PropertyConfigurator;
 
 /**
@@ -44,7 +43,7 @@ public class LoggerDemo {
 		Logger myLogger = Logger.getLogger("log4j.logger.myLogger");
 		
 		//	使用Java属性配置文件配置Log4j环境
-		PropertyConfigurator.configure("E:\\gitResponsitory\\web\\web\\src\\log4j.properties");
+		PropertyConfigurator.configure("F:\\gitResponsitory\\web\\web\\src\\log4j.properties");
 		
 		//	Log的等级从低到高依次是：debug，info，warn，error,fatal
 		rootLogger.debug("This is a message from " + rootLogger.getName());
