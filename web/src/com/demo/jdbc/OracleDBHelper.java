@@ -2,7 +2,9 @@ package com.demo.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -19,9 +21,19 @@ import com.utils.StringUtils;
 public class OracleDBHelper {
 
 	public static void main(String[] args) {
-		OracleDBHelper helper = new OracleDBHelper();
+		//OracleDBHelper helper = new OracleDBHelper();
 		
-		helper.connectByJndi();
+		//helper.connectByJndi();
+		
+		try {
+			testSavePoint();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -33,13 +45,13 @@ public class OracleDBHelper {
 	 * @date		2016-1
 	 *
 	 */
-	public void connect() throws ClassNotFoundException, SQLException{
+	public static Connection getConnection() throws ClassNotFoundException, SQLException{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url = "jdbc:oracle:thin:@192.168.3.68:1521:SZEPB";
-		String userName = "U_LIMS_BH_0523";
-		String pwd = "U_LIMS_BH_0523";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:ORCL";
+		String userName = "U_LIMS_GS_0907";
+		String pwd = "U_LIMS_GS_0907";
 		
-		Connection conn = DriverManager.getConnection(url, userName, pwd);
+		return DriverManager.getConnection(url, userName, pwd);
 	}
 	
 	/**
@@ -84,5 +96,30 @@ public class OracleDBHelper {
 		} catch (Exception e) {
 			
 		}
+	}
+	
+	/**
+	 * JDBC保存点实例
+	 *
+	 * 
+	 * @author	    余冬冬
+	 * @data 	 2016年11月3日
+	 * @version	 v0.1.0
+	 * @throws SQLException 
+	 * @throws ClassNotFoundException 
+	 *
+	 */
+	public static void testSavePoint() throws ClassNotFoundException, SQLException{
+		Connection conn = getConnection();
+		conn.setAutoCommit(false);
+		String sql = "insert into t_hjjc_ypgl_ccy(ccyxh) values(?)";
+		PreparedStatement pst = conn.prepareStatement(sql);
+		pst.setInt(0, 100);
+		Savepoint setSavepoint = conn.setSavepoint();
+		pst.execute();
+		conn.releaseSavepoint(setSavepoint);
+		conn.commit();
+		pst.close();
+		conn.close();
 	}
 }

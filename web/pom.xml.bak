@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>web</groupId>
+	<artifactId>web</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<properties>  
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+	    <spring.version>3.1.2.RELEASE</spring.version>  
+	</properties> 
+	<url>http://maven.apache.org</url>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>  
+				<groupId>org.apache.maven.plugins</groupId>  
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5</version>
+				<configuration> 
+					<target>1.6</target> 
+					<source>1.6</source>
+					<encoding>utf-8</encoding>
+					<compilerArguments>
+	                  <verbose />
+	                  <bootclasspath>${java.home}\lib\rt.jar</bootclasspath>
+	          		</compilerArguments>
+				</configuration>
+			</plugin>
+		    </plugins> 
+		<outputDirectory>WebRoot/WEB-INF/classes</outputDirectory>
+	</build>
+	<repositories>
+		<repository>
+			<id>mvn</id>
+			<name>mvn</name>
+			<url>https://mvnrepository.com/artifact/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-webmvc</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-web</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>
+		
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-jdbc</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-context</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-aop</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-core</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+		  
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-test</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>  
+
+		<!-- 添加servlet-api 支持 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<!-- scope 配置依赖的范围 -->
+			<!-- compile，缺省值，适用于所有阶段，会随着项目一起发布。 -->
+			<!-- provided，类似compile，期望JDK、容器或使用者会提供这个依赖。如servlet.jar。 -->
+			<!-- runtime，只在运行时使用，如JDBC驱动，适用运行和测试阶段。 -->
+			<!-- test，只在测试时使用，用于编译和运行测试代码。不会随项目发布。 -->
+			<!-- system，类似provided，需要显式提供包含依赖的jar，Maven不会在Repository中查找它。 -->
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- 添加mongoDb需要的jar包 -->
+		<dependency>
+	        <groupId>org.mongodb</groupId>
+	        <artifactId>mongodb-driver</artifactId>
+	        <version>3.0.3</version>
+    	</dependency>
+    	
+    	<dependency>
+		    <groupId>net.sf.json-lib</groupId>
+		    <artifactId>json-lib</artifactId>
+		    <version>2.4</version>
+		    <classifier>jdk15</classifier>
+		</dependency>
+		
+		<dependency>  
+			 <groupId>org.slf4j</groupId>  
+			<artifactId>slf4j-api</artifactId>  
+			<version>1.7.7</version>
+		</dependency> 
+	</dependencies>
+</project>

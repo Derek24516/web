@@ -1,10 +1,10 @@
 package com.demo.spring;
 
+import org.springframework.web.servlet.DispatcherServlet;
 
 public class SpringDemo {
 
 	public static void main(String[] args) {
-
 	}
 
 	public static void testApplicationContext(){

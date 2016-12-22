@@ -44,6 +44,8 @@
 			<name>mvn</name>
 			<url>https://mvnrepository.com/artifact/</url>
 			<layout>default</layout>
+			<releases><enabled>true</enabled></releases>
+			<snapshots><enabled>false</enabled></snapshots>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -90,6 +92,58 @@
 		    <version>${spring.version}</version>  
 		</dependency>  
 
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>3.14</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>3.14</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-excelant</artifactId>
+		    <version>3.14</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml-schemas</artifactId>
+		    <version>3.14</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-scratchpad</artifactId>
+		    <version>3.14</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-examples</artifactId>
+		    <version>3.14</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/openxml4j -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>openxml4j</artifactId>
+		    <version>1.0-beta</version>
+		</dependency>
+		
+
+		<!-- cglib用于spring的Bean支持Annotation配置 -->
+		<dependency>
+		    <groupId>cglib</groupId>
+		    <artifactId>cglib-nodep</artifactId>
+		    <version>3.1</version>
+		</dependency>
+		
 		<!-- 添加servlet-api 支持 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>

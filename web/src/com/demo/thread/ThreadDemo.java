@@ -24,6 +24,7 @@ public class ThreadDemo {
 	public static void testDaemon() throws InterruptedException{
 		//	默认是非后台线程
 		//	后台线程会在main方法执行完毕之后，也立即（不确定执行到哪里了）关闭
+		//  非后台线程，会执行完了之后，main方法才会关闭
 		RunnableDemo runDemo = new RunnableDemo();
 		Thread thread1 = new Thread(runDemo);
 		thread1.setDaemon(true);

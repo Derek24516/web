@@ -2,6 +2,7 @@ package com.demo.reflect;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -11,7 +12,9 @@ public class ReflectDemo {
 		try {
 			//testSetPropertity();
 			
-			testGetClassInfo();
+			//testGetClassInfo();
+			
+			testClass();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -79,11 +82,12 @@ public class ReflectDemo {
 		System.out.println(s);
 	}
 	
-	public static void testGenericMethod(){
+	public static void testClass() throws InstantiationException, IllegalAccessException{
+		//IllegalAccessException,newInstance方法调用的是默认的无参构造函数，如果默认的构造函数设置成private 或者 default(不是在同一个包类)或者protected（没有父子关系的类中）
+		//即当前对无参构造函数没有访问权限，那么就会抛出IllegalAccessException（对类属性、方法等没有访问权限异常）
+		//Student s = Student.class.newInstance();
 		
-	}
-	
-	public static <T extends Student> void genericMethod(Class<T> s){
-		
+		Constructor<Student>[] declaredConstructors = (Constructor<Student>[]) Student.class.getDeclaredConstructors();
+		System.out.println(declaredConstructors);
 	}
 }

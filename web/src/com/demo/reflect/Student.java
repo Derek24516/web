@@ -34,4 +34,7 @@ public class Student {
 			System.out.println(string);
 		}
 	}
+	
+	private Student() {
+	}
 }
