@@ -8,6 +8,7 @@ public class EvenChecker implements Runnable {
 	private final int id;
 
 	public EvenChecker(IntGenerator g, int ident) {
+		// test
 		generator = g;
 		id = ident;
 	}
